@@ -16,7 +16,7 @@ pipeline {
 
         stage('Archive Website') {
             steps {
-                archiveArtifacts artifacts: '**/*.{html,css,js}', fingerprint: true
+                archiveArtifacts artifacts: '**/*', fingerprint: true
             }
         }
     }
