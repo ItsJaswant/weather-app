@@ -29,10 +29,10 @@ pipeline {
             // mail to: 'you@example.com', subject: 'Build Logs', body: 'Build finished'
         }
         success {
-            // Optional: Send notifications on successful builds (e.g., email/Slack)
+            echo '✅ Build and tests completed successfully!'
         }
         failure {
-            // Optional: Send notifications on failed builds (e.g., email/Slack)
+            echo '❌ Build or tests failed!'
         }
     }
 }
