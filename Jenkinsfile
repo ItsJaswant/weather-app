@@ -14,18 +14,9 @@ pipeline {
             }
         }
 
-        stage('Archive Website') {
-            steps {
-                archiveArtifacts artifacts: '**/*', fingerprint: true
-            }
-        }
-    }
-
-
     post {
         always {
-            archiveArtifacts artifacts: '**/*.log' // Archive logs from all stages
-            // mail to: 'you@example.com', subject: 'Build Logs', body: 'Build finished'
+            echo "✅ Pipeline completed"
         }
         success {
             echo '✅ Build and tests completed successfully!'
