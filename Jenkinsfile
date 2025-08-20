@@ -10,18 +10,17 @@ pipeline {
 
         stage('Build Project') {
             steps {
-                sh 'cd <path_to_your_project>'
-                sh './build.sh'  // Assuming you have a build script named build.sh
+                echo 'ℹ️ No build required. Static files only.'
             }
         }
 
-        stage('Run Tests') {
+        stage('Archive Website') {
             steps {
-                sh 'cd <path_to_your_project>'
-                sh './test.sh'  // Assuming you have a test script named test.sh
+                archiveArtifacts artifacts: '**/*.{html,css,js}', fingerprint: true
             }
         }
     }
+
 
     post {
         always {
