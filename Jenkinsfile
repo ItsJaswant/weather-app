@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: '<branch_name>', credentialsId: '', url: '<repository_url>'
+                git branch: 'main', credentialsId: '', url: 'https://github.com/ItsJaswant/weather-app/'
             }
         }
 
